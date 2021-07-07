@@ -58,7 +58,22 @@ const getListOfAgesOfUsersWith = (item) => {
     return mockDBCall(dataAccessMethod);
 };
 
+const getItems = () => {
+    const dataAccessMethod = () => {
+        // should return an array of items without duplicate value.
+        let itemSet = new Set();
+        for (let user in db.itemsOfUserByUsername) {
+            for (let item of db.itemsOfUserByUsername[user]) {
+                itemSet.add(item);
+            }
+        }
+        return Array.from(itemSet);
+    };
+    return mockDBCall(dataAccessMethod);
+};
+
 module.exports = {
     getUsers,
-    getListOfAgesOfUsersWith
+    getListOfAgesOfUsersWith,
+    getItems
 };
