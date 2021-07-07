@@ -1,0 +1,27 @@
+@import "~bootstrap/scss/bootstrap";
+
+#item {
+  max-width: 120px;
+}
+
+.table {
+  max-width: 60%;
+}
+
+.app {
+  margin: 50px 20px;
+}
+
+body {
+  text-transform: capitalize;
+}
+
+.user-item {
+  .item-label {
+    margin-bottom: 20px 0;
+  }
+
+  &__dropdown {
+    margin-bottom: 20px;
+  }
+}
